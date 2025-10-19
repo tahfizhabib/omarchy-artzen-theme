@@ -1,0 +1,191 @@
+/* ==============================
+   Walker GTK4 Theme (Ultra Compact Rounded)
+   Author: Rakhal
+   ============================== */
+
+/* ----- Colors ----- */
+@define-color selected-text #b97670;
+@define-color text #fdf9f8;
+@define-color base #181c1f;
+@define-color border #b18d85;
+@define-color foreground #fdf9f8;
+@define-color background #181c1f;
+@define-color accent_bg_color #54546d;
+@define-color error_bg_color #C34043;
+@define-color error_fg_color #DCD7BA;
+
+/* ----- Reset ----- */
+* {
+    all: unset;
+}
+
+/* ----- Icons ----- */
+.normal-icons {
+    -gtk-icon-size: 10px;
+}
+.large-icons {
+    -gtk-icon-size: 20px;
+}
+.preview .large-icons {
+    -gtk-icon-size: 40px;
+}
+
+/* ----- Scrollbar ----- */
+scrollbar {
+    opacity: 0;
+}
+
+/* ----- Main Window Wrapper ----- */
+.box-wrapper {
+    background: @background;
+    border: 1px solid alpha(@accent_bg_color, 0.4);
+    border-radius: 12px; /* main wrapper corners */
+    padding: 4px;
+    margin: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ----- Preview & Labels ----- */
+.preview-box,
+.elephant-hint,
+.placeholder {
+    color: @foreground;
+}
+
+.preview {
+    border: 1px solid alpha(@accent_bg_color, 0.25);
+    padding: 3px;
+    border-radius: 2px; /* internal element corners */
+    color: @foreground;
+    margin: 2px 0;
+}
+
+/* ----- Search Input ----- */
+.search-container {
+    border-radius: 2px;
+}
+
+.input {
+    caret-color: @foreground;
+    background: lighter(@background);
+    padding: 2px 4px;
+    color: @foreground;
+    border-radius: 2px; /* internal element corners */
+    min-height: 0;
+}
+
+.input placeholder {
+    opacity: 0.5;
+}
+
+.input:focus,
+.input:active {
+    border: 1px solid alpha(@accent_bg_color, 0.4);
+}
+
+/* ----- Content & List ----- */
+.content-container,
+.scroll,
+.list {
+    margin: 0;
+    padding: 0;
+    color: @foreground;
+    spacing: 0;
+}
+
+/* ----- ItemBox ----- */
+.item-box {
+    border-radius: 2px; /* internal element corners */
+    padding: 2px 4px;
+    margin: 1px 0;
+    min-height: 0;
+}
+
+.item-box:hover,
+child:hover .item-box,
+child:selected .item-box {
+    background: alpha(@accent_bg_color, 0.25);
+}
+
+.item-quick-activation {
+    background: alpha(@accent_bg_color, 0.25);
+    border-radius: 2px; /* internal element corners */
+    padding: 2px 3px;
+}
+
+/* ----- Text ----- */
+.item-text {
+    color: @text;
+}
+.item-subtext {
+    font-size: 12px;
+    opacity: 0.5;
+    color: @text;
+    margin-top: -2px;
+}
+
+.item-image-text {
+    font-size: 28px;
+    color: @selected-text;
+    margin: 0;
+}
+
+/* ----- Calculator & Symbols ----- */
+.calc .item-text {
+    font-size: 24px;
+}
+.symbols .item-image {
+    font-size: 24px;
+    color: @text;
+}
+
+/* ----- Todo States ----- */
+.todo.done .item-text-box {
+    opacity: 0.25;
+}
+.todo.urgent {
+    font-size: 24px;
+}
+.todo.active {
+    font-weight: bold;
+}
+
+/* ----- Bluetooth / Device States ----- */
+.bluetooth.disconnected {
+    opacity: 0.5;
+}
+
+/* ----- Keybinds ----- */
+.keybinds-wrapper {
+    border-top: 1px solid alpha(@accent_bg_color, 0.15);
+    font-size: 11px;
+    opacity: 0.45;
+    color: @foreground;
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+.keybinds,
+.keybind {
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+.keybind-bind {
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+/* ----- Error Message ----- */
+.error {
+    padding: 3px;
+    border-radius: 2px; /* internal element corners */
+    background: @error_bg_color;
+    color: @error_fg_color;
+    margin: 2px 0;
+}
+
+/* ----- Miscellaneous ----- */
+:not(.calc).current {
+    font-style: italic;
+}
